@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>News Headlines</title>
+</head>
+{% if user.is_authenticated %}
+<style>
+    body{
+        background-color: rgb(143, 141, 145);
+    }
+</style>
+<body >
+    {% if user.is_authenticated %}
+    <h2 class="text-success"> Hi {{ user.username }}! </h2>
+     <p><a  href="{% url 'logout' %}" >Log Out</a></p>
+   {% else %}
+     <p>You are not logged in</p>
+     <a href="{% url 'login' %}">Log In</a>
+   {% endif %}
+    <h1>News Headlines</h1>
+    <form method='POST' >
+        {% csrf_token %}
+        <input type='text' name='keyword' id='keyword' value='{{sekeyword}}'>
+        <input type='submit' name='bnt_submit' value='Search'>
+
+        <input type='submit' name='bnt_refresh' value='Refresh'>
+        
+        {% if sekeyword %}
+        Date_published
+        <input type='text' name='Date_published' id='Date_published' >
+        Name
+        <input type='text' name='Name' id='Name' >
+        Category
+        <input type='text' name='Category' id='Category' >
+        language
+        <input type='text' name='language' id='language' >
+        <input type='submit' name='bnt_filter' value='Filter'>
+        {% endif %}
+
+
+    </form>
+    <a href='search_history'  >Search History</a>
+    <ul>
+        {% for article in articles %}
+            <li>
+                <h2>{{ article.title }}</h2>
+                <p>{{ article.description }}</p>
+                <a href="{{ article.url }}" target="_blank">Read More</a><br><br>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+
+{% else %}
+<body>
+<p>You are not logged in</p>
+<a href="{% url 'login' %}">Log In</a>
+{% endif %}
+</body>
+
+</html>

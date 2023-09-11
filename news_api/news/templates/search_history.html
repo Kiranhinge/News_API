@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>News Headlines</title>
+</head>
+<body>
+    <h1>News Headlines</h1>
+    <form method='POST' >
+        {% csrf_token %}
+        <input type='text' name='keyword' id='keyword' >
+        <input type='submit' name='bnt_submit' value='Search'>
+    </form>
+    <a href='/'  >Back</a>
+    <ul>
+        {% for data in list %}
+            <li>
+                <h2>{{ data.keyword }}</h2>
+                {% comment %} <p>{{ article.description }}</p> {% endcomment %}
+                {% comment %} <a href="{{ article.url }}" target="_blank">Read More</a><br><br> {% endcomment %}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
