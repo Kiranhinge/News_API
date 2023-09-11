@@ -44,5 +44,5 @@ if you find our work  useful in your research please consider citing:
 @article{News_API,
       Author = {Kiran Hige},
       Title = {/Build a customer facing web based application where a user can search for news articles from around the world based on the entered keyword. Also create a web portal for them to view results of their previous searches++ Python},
-     Year = {2023}
+      Year = {2023}
 }
