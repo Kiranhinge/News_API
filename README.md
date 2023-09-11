@@ -26,11 +26,23 @@ response status code
 search history
 
 
+API Integration:
+implement code to fetch data from the new API
+Using:News API – Free JSON API for Live News and Blog Articles this API
+
+Templates:
+Create HTML templates for rendering the news data.c
+creating login page
+
+URLs:
+Define Url patterns in urls.py
+
+
 if you find our work  useful in your research please consider citing:
 
 
-@article{
-titile:{Build a customer facing web based application where a user can search for news articles from around the world based on the entered keyword. Also create a web portal for them to view results of their previous searches},
-author:{Kiran Hinge},
-year:{2023}
+@article{News_API,
+      Author = {Kiran Hige},
+      Title = {/Build a customer facing web based application where a user can search for news articles from around the world based on the entered keyword. Also create a web portal for them to view results of their previous searches++ Python},
+     Year = {2023}
 }
